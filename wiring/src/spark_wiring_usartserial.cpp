@@ -81,6 +81,11 @@ size_t USARTSerial::write(uint8_t c)
   return HAL_USART_Write_Data(_serial, c);
 }
 
+size_t USARTSerial::write(uint16_t c)
+{
+  return HAL_USART_Write_NineBitData(_serial, c);
+}
+
 USARTSerial::operator bool() {
   return true;
 }
